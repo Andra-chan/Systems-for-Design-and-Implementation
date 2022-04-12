@@ -1,0 +1,2 @@
+D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Server\obj\Release\Server.csprojAssemblyReference.cache
+D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Server\obj\Release\Server.csproj.CoreCompileInputs.cache
