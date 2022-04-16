@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Client" target="17" />
+      <module name="ClientFX" target="17" />
+      <module name="ClientFX.main" target="17" />
+      <module name="clientFX.ProiectMPPJavaClientServer" target="17" />
+      <module name="clientFX.ProiectMPPJavaClientServer.main" target="17" />
+      <module name="clientFX.ProiectMPPJavaClientServer.test" target="17" />
+      <module name="ClientFX.test" target="17" />
+      <module name="ProiectMPPJavaClientServer.Client" target="17" />
+      <module name="ProiectMPPJavaClientServer.Client.main" target="17" />
+      <module name="ProiectMPPJavaClientServer.Client.test" target="17" />
+      <module name="ProiectMPPJavaClientServer.Persistance.main" target="17" />
+      <module name="ProiectMPPJavaClientServer.Persistance.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

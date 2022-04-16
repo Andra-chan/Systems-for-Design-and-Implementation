@@ -1,0 +1,10 @@
+rootProject.name = "ClientFX"
+
+//rootProject.name = 'ProiectMPPJavaClientServer'
+include 'ClientFX'
+include 'Model'
+include 'Networking'
+include 'Persistance'
+include 'Server'
+include 'Services'
+include 'Persistence'

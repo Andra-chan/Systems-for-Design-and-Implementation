@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../Gradle/gradle-7.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Client2" />
+            <option value="$PROJECT_DIR$/ClientFX" />
+            <option value="$PROJECT_DIR$/Model" />
+            <option value="$PROJECT_DIR$/Networking" />
+            <option value="$PROJECT_DIR$/Persistance" />
+            <option value="$PROJECT_DIR$/Persistence" />
+            <option value="$PROJECT_DIR$/Server" />
+            <option value="$PROJECT_DIR$/Services" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Client" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../Gradle/gradle-7.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Client" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ClientFX" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../Gradle/gradle-7.3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ClientFX" />
+            <option value="$PROJECT_DIR$/ClientFX/ClientFX" />
+            <option value="$PROJECT_DIR$/ClientFX/Model" />
+            <option value="$PROJECT_DIR$/ClientFX/Networking" />
+            <option value="$PROJECT_DIR$/ClientFX/Persistance" />
+            <option value="$PROJECT_DIR$/ClientFX/Persistence" />
+            <option value="$PROJECT_DIR$/ClientFX/Server" />
+            <option value="$PROJECT_DIR$/ClientFX/Services" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
