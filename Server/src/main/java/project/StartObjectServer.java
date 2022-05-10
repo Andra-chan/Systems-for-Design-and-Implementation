@@ -6,6 +6,7 @@ import project.network.utils.ServerException;
 import project.repository.database.FlightDbRepository;
 import project.repository.database.TicketDbRepository;
 import project.repository.database.UserDbRepository;
+import project.repository.database.UserHibernateRepository;
 import project.server.ServerImpl;
 import project.services.IServices;
 
@@ -26,6 +27,7 @@ public class StartObjectServer {
         }
 
         FlightDbRepository flightDbRepository = new FlightDbRepository(serverProps);
+        //UserHibernateRepository userDbRepository = new UserHibernateRepository(serverProps);
         UserDbRepository userDbRepository = new UserDbRepository(serverProps);
         TicketDbRepository ticketDbRepository = new TicketDbRepository(serverProps);
         IServices service = new ServerImpl(flightDbRepository, ticketDbRepository, userDbRepository);

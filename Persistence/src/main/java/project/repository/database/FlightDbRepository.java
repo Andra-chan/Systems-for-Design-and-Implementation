@@ -3,6 +3,7 @@ package project.repository.database;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 import project.model.Flight;
 import project.repository.IFlightRepository;
 import project.repository.JdbcUtils;
@@ -16,6 +17,8 @@ import java.util.List;
 import java.util.Properties;
 
 
+//@org.springframework.stereotype.Repository
+//@Component
 public class FlightDbRepository implements IFlightRepository {
 
     private static final Logger logger = LogManager.getLogger();
@@ -66,6 +69,26 @@ public class FlightDbRepository implements IFlightRepository {
         logger.traceExit();
         return elem;
     }
+
+    public Flight idUpdate(Integer id, Flight elem){
+        logger.traceEntry("updating task {}", elem);
+    Connection con = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = con.prepareStatement("update Flights set destination = ?, airport = ?, date_time = ?, total_seats = ?, remaining_seats = ? where id = ?")) {
+        preparedStatement.setString(1, elem.getDestination());
+        preparedStatement.setString(2, elem.getAirport());
+        preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(elem.getDateTime())));
+        preparedStatement.setInt(4, elem.getTotalSeats());
+        preparedStatement.setInt(5, elem.getRemainingSeats());
+        preparedStatement.setInt(6, id);
+        int result = preparedStatement.executeUpdate();
+        logger.trace("Saved {} instances", result);
+    } catch (SQLException ex) {
+        logger.error(ex);
+        System.err.println("Error DB " + ex);
+    }
+        logger.traceExit();
+        return elem;
+}
 
     @Override
     public Flight delete(Integer id) {

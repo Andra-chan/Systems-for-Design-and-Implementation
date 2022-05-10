@@ -2,6 +2,7 @@ package client.gui;
 
 
 import client.StartObjectClient;
+import client.StartProtobuffClient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -110,7 +111,10 @@ public class MainPageController implements Initializable, IObserver {
     }
 
     @Override
-    public void ticketsSold(Flight flight, Integer seats) throws ServiceException {
+    public void ticketsSold(List<Flight> flights) throws ServiceException {
+        modelFlights.setAll(flights);
+        //flightsList.setItems(modelFlights);
+        /*
         var flightList = getFlights();
         modelFlights.setAll(flightList);
         for(int index=0;index<modelFlights.size();index++){
@@ -121,12 +125,15 @@ public class MainPageController implements Initializable, IObserver {
                 flightsList.setItems(modelFlights);
             }
         }
+
+         */
     }
 
     public void onLogoutButtonClick() {
         try {
             service.logout(user,this);
-            StartObjectClient.changeSceneToLogin(service);
+            StartProtobuffClient.changeSceneToLogin(service);
+            //StartObjectClient.changeSceneToLogin(service);
         } catch (ServiceException e) {
             warningLabel.setText(e.getMessage());
         }

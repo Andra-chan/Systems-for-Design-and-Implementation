@@ -161,11 +161,10 @@ public class ServicesObjectProxy implements IServices {
 
         if (update instanceof TicketSoldResponse){
             TicketSoldResponse ticketSoldResponse=(TicketSoldResponse) update;
-            Flight flight=ticketSoldResponse.getFlight();
-            Integer seats = ticketSoldResponse.getSeats();
+           List<Flight> flights =ticketSoldResponse.getFlight();
             System.out.println("Some tickets were sold!");
             try{
-                client.ticketsSold(flight, seats);
+                client.ticketsSold(flights);
             }catch (ServiceException e){
                 e.printStackTrace();
             }

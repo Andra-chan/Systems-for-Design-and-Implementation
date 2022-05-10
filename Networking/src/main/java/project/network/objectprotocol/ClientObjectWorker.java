@@ -143,10 +143,10 @@ public class ClientObjectWorker implements Runnable, IObserver {
     }
 
     @Override
-    public void ticketsSold(Flight flight, Integer seats) throws ServiceException {
-        System.out.println("Ticket sold "+ flight);
+    public void ticketsSold(List<Flight> flights) throws ServiceException {
+        System.out.println("Ticket sold!");
         try {
-            sendResponse(new TicketSoldResponse(flight, seats));
+            sendResponse(new TicketSoldResponse(flights));
         } catch (IOException e) {
             throw new ServiceException("Sending error: "+e);
         }

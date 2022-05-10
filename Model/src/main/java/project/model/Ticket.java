@@ -1,7 +1,11 @@
 package project.model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Table;
 
+@javax.persistence.Entity
+@Table(name="Tickets")
 public class Ticket extends Entity<Integer> implements Serializable {
     private Integer flightId;
     private String name;
@@ -17,6 +21,7 @@ public class Ticket extends Entity<Integer> implements Serializable {
         this.seats = seats;
     }
 
+    @Column(name="flight_id")
     public Integer getFlightId() {
         return flightId;
     }
@@ -25,6 +30,7 @@ public class Ticket extends Entity<Integer> implements Serializable {
         this.flightId = flightId;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -33,6 +39,7 @@ public class Ticket extends Entity<Integer> implements Serializable {
         this.name = name;
     }
 
+    @Column(name="tourists")
     public String getTourists() {
         return tourists;
     }
@@ -41,6 +48,7 @@ public class Ticket extends Entity<Integer> implements Serializable {
         this.tourists = tourists;
     }
 
+    @Column(name="address")
     public String getAddress() {
         return address;
     }
@@ -49,6 +57,7 @@ public class Ticket extends Entity<Integer> implements Serializable {
         this.address = address;
     }
 
+    @Column(name="seats")
     public Integer getSeats() {
         return seats;
     }

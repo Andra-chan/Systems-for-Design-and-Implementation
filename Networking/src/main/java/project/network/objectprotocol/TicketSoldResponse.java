@@ -4,28 +4,21 @@ import project.model.Flight;
 import project.model.FlightDTO;
 import project.model.TicketDTO;
 
+import java.util.List;
+
 public class TicketSoldResponse implements UpdateResponse{
-    private Flight flight;
-    private Integer seats;
+    private List<Flight> flights;
 
-    public Integer getSeats() {
-        return seats;
+
+    public TicketSoldResponse(List<Flight> flights) {
+        this.flights = flights;
     }
 
-    public void setSeats(Integer seats) {
-        this.seats = seats;
+    public List<Flight> getFlight() {
+        return flights;
     }
 
-    public TicketSoldResponse(Flight flight, Integer seats) {
-        this.flight = flight;
-        this.seats = seats;
-    }
-
-    public Flight getFlight() {
-        return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
+    public void setFlight(List<Flight> flights) {
+        this.flights = flights;
     }
 }

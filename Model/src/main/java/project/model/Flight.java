@@ -10,6 +10,24 @@ public class Flight extends Entity<Integer> implements Serializable {
     private Integer totalSeats;
     private Integer remainingSeats;
 
+    public Flight(){}
+
+    public Flight(String destination){
+        this(destination,"",LocalDateTime.now(),0,0);
+    }
+
+    public Flight(String destination, String airport){
+        this(destination,airport,LocalDateTime.now(),0,0);
+    }
+
+    public Flight(String destination, String airport, LocalDateTime dateTime){
+        this(destination,airport,dateTime,0,0);
+    }
+
+    public Flight(String destination, String airport, LocalDateTime dateTime, Integer totalSeats){
+        this(destination,airport,dateTime,totalSeats,0);
+    }
+
     public Flight(String destination, String airport, LocalDateTime dateTime, Integer totalSeats, Integer remainingSeats) {
         this.destination = destination;
         this.airport = airport;

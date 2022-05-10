@@ -3,6 +3,13 @@ package project.repository.database;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 import project.model.Flight;
 import project.model.Ticket;
 import project.repository.ITicketRepository;
@@ -27,6 +34,7 @@ public class TicketDbRepository implements ITicketRepository {
         logger.info("Initializing TicketDbRepository with properties: {} ", props);
         dbUtils = new JdbcUtils(props);
     }
+
 
     @Override
     public Ticket save(Ticket elem) {

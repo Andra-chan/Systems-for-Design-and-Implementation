@@ -24,7 +24,8 @@ tasks.withType(JavaCompile) {
 
 application {
     //mainModule = 'client'
-    mainClass = 'client.StartObjectClient'
+    //mainClass = 'client.StartObjectClient'
+    mainClass = 'client.StartProtobuffClient'
 }
 
 javafx {
@@ -48,4 +49,5 @@ test {
     useJUnitPlatform()
 }
 
-mainClassName ='client.StartObjectClient'
+//mainClassName ='client.StartObjectClient'
+mainClassName ='client.StartProtobuffClient'

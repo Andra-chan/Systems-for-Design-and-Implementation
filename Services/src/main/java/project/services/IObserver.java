@@ -2,7 +2,9 @@ package project.services;
 
 import project.model.Flight;
 
+import java.util.List;
+
 
 public interface IObserver {
-    void ticketsSold(Flight flight, Integer seats) throws ServiceException;
+    void ticketsSold(List<Flight> flights) throws ServiceException;
 }

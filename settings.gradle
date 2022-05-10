@@ -1,5 +1,5 @@
 rootProject.name = 'ProiectMPPJavaClientServer'
-include 'ClientFX'
+//include 'ClientFX'
 include 'Model'
 include 'Networking'
 include 'Persistance'
@@ -7,4 +7,6 @@ include 'Server'
 include 'Services'
 include 'Persistence'
 include 'Client2'
+include 'REST'
+include 'Protobuff'
 

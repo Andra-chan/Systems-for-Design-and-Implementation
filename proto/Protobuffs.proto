@@ -1,0 +1,63 @@
+syntax="proto3";
+package project.network.protobuffprotocol;
+
+option java_package = "project.network.protobuffprotocol";
+option java_outer_classname = "Protobuffs";
+
+message User{
+  string firstName=1;
+  string lastName=2;
+  string email=3;
+  string password=4;
+}
+
+message Flight{
+  int32 id =1;
+  string destination=2;
+  string airport=3;
+  string date=4;
+  int32 totalSeats=5;
+  int32 remainingSeats=6;
+}
+
+message Ticket{
+  int32 flightId=1;
+  string name=2;
+  string tourists=3;
+  string address=4;
+  int32 seats=5;
+}
+
+
+message Request{
+  enum Type {Unkown=0; Login = 1; Logout = 2; GetAllFlights = 3; SearchByAirport = 4; SellTicket = 5;}
+
+  // Identifies which request is filled in.
+  Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+
+  User user = 2;
+  string email = 3;
+  string password = 4;
+  repeated Flight flights = 5;
+  string destination = 6;
+  string airport = 7;
+  Ticket ticket = 8;
+
+}
+
+message Response{
+  enum Type {Unkown=0; Login = 1; Logout = 2; GetAllFlights = 3; SearchByAirport = 4; SellTicket = 5; Ok = 6; Error = 7;}
+
+  // Identifies which request is filled in.
+  Type type = 1;
+
+  int32 id = 2;
+  string error = 3;
+  User user = 4 ;
+  repeated Flight flights = 5;
+  Flight flight = 6;
+  int32 seats = 7;
+
+}

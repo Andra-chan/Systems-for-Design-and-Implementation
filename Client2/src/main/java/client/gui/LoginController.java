@@ -2,6 +2,7 @@ package client.gui;
 
 
 import client.StartObjectClient;
+import client.StartProtobuffClient;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -54,7 +55,8 @@ public class LoginController {
             return;
         }
         currentUser.setId(userId);
-        StartObjectClient.changeSceneToMainWindow(currentUser, service);
+        //StartObjectClient.changeSceneToMainWindow(currentUser, service);
+        StartProtobuffClient.changeSceneToMainWindow(currentUser, service);
     }
 
     /**

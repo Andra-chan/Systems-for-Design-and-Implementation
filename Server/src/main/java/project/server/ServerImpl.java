@@ -36,7 +36,7 @@ public class ServerImpl implements IServices {
         loggedClients = new ConcurrentHashMap<>();
     }
 
-    private void notifyClients(Flight flight, Integer seats) throws ServiceException {
+    private void notifyClients(List<Flight> flights) throws ServiceException {
         System.out.println("Notify");
 
         ExecutorService executor= Executors.newFixedThreadPool(defaultThreadsNo);
@@ -46,7 +46,7 @@ public class ServerImpl implements IServices {
                 executor.execute(() -> {
                     try {
                         System.out.println("Notifying [" + id + "]");
-                        client.ticketsSold(flight, seats);
+                        client.ticketsSold(flights);
                     } catch (ServiceException e) {
                         System.err.println("Error notifying " + e);
                     }
@@ -108,7 +108,8 @@ public class ServerImpl implements IServices {
         if (flight.getRemainingSeats() < 0)
             flight.setRemainingSeats(0);
         flightDbRepository.update(flight);
-        notifyClients(flight, seats);
+        List<Flight> flights = getAllFlights();
+        notifyClients(flights);
     }
 
 }

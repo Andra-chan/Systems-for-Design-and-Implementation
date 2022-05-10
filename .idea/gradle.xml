@@ -11,11 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Client2" />
-            <option value="$PROJECT_DIR$/ClientFX" />
             <option value="$PROJECT_DIR$/Model" />
             <option value="$PROJECT_DIR$/Networking" />
             <option value="$PROJECT_DIR$/Persistance" />
             <option value="$PROJECT_DIR$/Persistence" />
+            <option value="$PROJECT_DIR$/Protobuff" />
+            <option value="$PROJECT_DIR$/REST" />
             <option value="$PROJECT_DIR$/Server" />
             <option value="$PROJECT_DIR$/Services" />
           </set>

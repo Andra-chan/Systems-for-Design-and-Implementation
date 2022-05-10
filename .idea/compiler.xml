@@ -12,6 +12,9 @@
       <module name="ProiectMPPJavaClientServer.Client" target="17" />
       <module name="ProiectMPPJavaClientServer.Client.main" target="17" />
       <module name="ProiectMPPJavaClientServer.Client.test" target="17" />
+      <module name="ProiectMPPJavaClientServer.ClientFX" target="17" />
+      <module name="ProiectMPPJavaClientServer.ClientFX.main" target="17" />
+      <module name="ProiectMPPJavaClientServer.ClientFX.test" target="17" />
       <module name="ProiectMPPJavaClientServer.Persistance.main" target="17" />
       <module name="ProiectMPPJavaClientServer.Persistance.test" target="17" />
     </bytecodeTargetLevel>
