@@ -191,7 +191,7 @@ namespace Networking
             stream.Flush();
         }
 
-        public void soldTicketsUpdate(IList<Flight> flights)
+        public void ticketsSold(IList<Flight> flights)
         {
             Console.WriteLine("Announce sold tickets");
             try

@@ -5,6 +5,6 @@ namespace Services
 {
     public interface IObserver
     {
-        void soldTicketsUpdate(IList<Flight> flights);
+        void ticketsSold(IList<Flight> flights);
     }
 }

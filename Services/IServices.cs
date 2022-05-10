@@ -10,7 +10,7 @@ namespace Services
 	public interface IServices
 	{
 
-		void login(String email, String password, IObserver client);
+		int login(String email, String password, IObserver client);
 
 		void logout(User user, IObserver client);
 

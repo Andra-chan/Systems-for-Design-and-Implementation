@@ -32,7 +32,7 @@ namespace Networking
             responses = new Queue<Response>();
         }
 
-        public void login(string username, string password, IObserver client)
+        public int login(string username, string password, IObserver client)
         {
             initializeConnection();
             User user = new User("a" ,"a" , username, password);
@@ -41,7 +41,7 @@ namespace Networking
             if (response is OkResponse)
             {
                 this.client = client;
-                return;
+                return user.Id;
             }
 
             if (response is ErrorResponse)
@@ -50,6 +50,7 @@ namespace Networking
                 closeConnection();
                 throw new ServiceException(err.Message);
             }
+            return 0;
         }
 
         public void logout(User user, IObserver client)
@@ -186,7 +187,7 @@ namespace Networking
             Console.WriteLine("updating sold Tickets...");
             try
             {
-                client.soldTicketsUpdate(soldUpdate.Flights);
+                client.ticketsSold(soldUpdate.Flights);
             }
             catch (ServiceException e)
             {

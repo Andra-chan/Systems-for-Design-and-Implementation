@@ -33,3 +33,6 @@ D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Netw
 D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\System.Memory.xml
 D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\System.Numerics.Vectors.xml
 D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\Google.Protobuf.dll
+D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\Google.Protobuf.pdb
+D:\An 2 Sem 2\MPP\ProiectMPPCSharpClientServer\ProiectMPPCSharpClientServer\Networking\bin\Debug\Google.Protobuf.xml

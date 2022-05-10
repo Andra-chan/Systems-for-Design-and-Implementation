@@ -25,7 +25,7 @@ namespace Server
 			loggedClients = new Dictionary<String, IObserver>();
 		}
 
-		public void login(String email, String password, IObserver client)
+		public int login(String email, String password, IObserver client)
 		{
 			User user = userDbRepository.findOneLogin(email, password);
 			if (user != null)
@@ -33,6 +33,7 @@ namespace Server
 				if (loggedClients.ContainsKey(email))
 					throw new ServiceException("User already logged in.");
 				loggedClients[email] = client;
+				return user.Id;
 			}
 			else
 				throw new ServiceException("Authentication failed.");
@@ -81,7 +82,7 @@ namespace Server
 			foreach (var elem in loggedClients)
 			{
 				Console.WriteLine("notifying client {0}", elem.Key);
-				Task.Run(() => elem.Value.soldTicketsUpdate(this.getAllFlights()));
+				Task.Run(() => elem.Value.ticketsSold(this.getAllFlights()));
 			}
 		}
 

@@ -11,6 +11,7 @@ using Networking;
 using System.Threading;
 using System.Net.Sockets;
 using Model;
+using Protobuf;
 
 namespace Server
 {
@@ -26,7 +27,8 @@ namespace Server
             IUserDbRepository<int, User> userRepo = new UserDbRepository(props);
             IServices serviceImpl = new ServerImplementation(flightRepo, ticketRepo, userRepo);
 
-            MyConcurrentServer server = new MyConcurrentServer("127.0.0.1", 55555, serviceImpl);
+            ProtoServer server = new ProtoServer("127.0.0.1", 55556, serviceImpl);
+            //MyConcurrentServer server = new MyConcurrentServer("127.0.0.1", 55555, serviceImpl);
             server.Start();
             Console.WriteLine("Server awaiting connections on port 55555");
             Console.ReadLine();
@@ -62,6 +64,23 @@ namespace Server
         protected override Thread createWorker(TcpClient client)
         {
             worker = new ClientWorker(server, client);
+            return new Thread(new ThreadStart(worker.run));
+        }
+    }
+
+    public class ProtoServer : ServerUtils.ConcurrentServer
+    {
+        private IServices server;
+        private ProtoWorker worker;
+        public ProtoServer(string host, int port, IServices server)
+            : base(host, port)
+        {
+            this.server = server;
+            Console.WriteLine("ProtoServer...");
+        }
+        protected override Thread createWorker(TcpClient client)
+        {
+            worker = new ProtoWorker(server, client);
             return new Thread(new ThreadStart(worker.run));
         }
     }

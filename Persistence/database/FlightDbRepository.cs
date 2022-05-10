@@ -43,7 +43,7 @@ namespace Persistence.database
 						String airport = dataR.GetString(2);
 						DateTime date_time = dataR.GetDateTime(3);
 						int total_seats = dataR.GetInt32(4);
-						int remaining_seats = dataR.GetInt32(4);
+						int remaining_seats = dataR.GetInt32(5);
 
 						Flight flight = new Flight(destination, airport, date_time, total_seats, remaining_seats);
 						flight.Id = idV;
@@ -211,7 +211,7 @@ namespace Persistence.database
 						String airport = dataR.GetString(2);
 						DateTime date_time = dataR.GetDateTime(3);
 						int total_seats = dataR.GetInt32(4);
-						int remaining_seats = dataR.GetInt32(4);
+						int remaining_seats = dataR.GetInt32(5);
 
 						Flight flight = new Flight(destination, airport, date_time, total_seats, remaining_seats);
 						flight.Id = idV;
@@ -250,7 +250,7 @@ namespace Persistence.database
 						String airport = dataR.GetString(2);
 						DateTime date_time = dataR.GetDateTime(3);
 						int total_seats = dataR.GetInt32(4);
-						int remaining_seats = dataR.GetInt32(4);
+						int remaining_seats = dataR.GetInt32(5);
 
 						Flight flight = new Flight(destination, airport, date_time, total_seats, remaining_seats);
 						flight.Id = idV;
