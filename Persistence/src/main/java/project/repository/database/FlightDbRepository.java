@@ -36,11 +36,16 @@ public class FlightDbRepository implements IFlightRepository {
         try (PreparedStatement preparedStatement = con.prepareStatement("insert into Flights(destination, airport, date_time, total_seats, remaining_seats) values (?,?,?,?,?)")) {
             preparedStatement.setString(1, elem.getDestination());
             preparedStatement.setString(2, elem.getAirport());
-            preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(elem.getDateTime())));
+            if(elem.getDateTime() != null)
+                preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(elem.getDateTime())));
+            else
+                preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(LocalDateTime.now())));
             preparedStatement.setInt(4, elem.getTotalSeats());
             preparedStatement.setInt(5, elem.getRemainingSeats());
             int result = preparedStatement.executeUpdate();
             logger.trace("Saved {} instances", result);
+            Flight flight1 = findOne(preparedStatement.getGeneratedKeys().getInt(1));
+            return flight1;
         } catch (SQLException ex) {
             logger.error(ex);
             System.err.println("Error DB " + ex);
@@ -56,7 +61,10 @@ public class FlightDbRepository implements IFlightRepository {
         try (PreparedStatement preparedStatement = con.prepareStatement("update Flights set destination = ?, airport = ?, date_time = ?, total_seats = ?, remaining_seats = ? where id = ?")) {
             preparedStatement.setString(1, elem.getDestination());
             preparedStatement.setString(2, elem.getAirport());
-            preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(elem.getDateTime())));
+            if(elem.getDateTime() != null)
+                preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(elem.getDateTime())));
+            else
+                preparedStatement.setString(3, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Timestamp.valueOf(LocalDateTime.now())));
             preparedStatement.setInt(4, elem.getTotalSeats());
             preparedStatement.setInt(5, elem.getRemainingSeats());
             preparedStatement.setInt(6, elem.getId());

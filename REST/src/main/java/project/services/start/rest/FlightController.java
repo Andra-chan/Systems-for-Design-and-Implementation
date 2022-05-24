@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.io.FileReader;
 
-//@CrossOrigin
+@CrossOrigin
 @RestController
 @RequestMapping("/flights")
 public class FlightController {
@@ -49,24 +49,21 @@ public class FlightController {
         return flightDbRepository.findAll();
     }
 
-    /*
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> getById(@PathVariable String id){
+    public ResponseEntity<?> getById(@PathVariable Integer id){
         System.out.println("Get by id "+id);
-        User user=userRepository.findBy(id);
-        if (user==null)
-            return new ResponseEntity<String>("User not found",HttpStatus.NOT_FOUND);
+        Flight flight = flightDbRepository.findOne(id);
+        if (flight==null)
+            return new ResponseEntity<String>("Flight not found",HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<User>(user, HttpStatus.OK);
+            return new ResponseEntity<Flight>(flight, HttpStatus.OK);
     }
 
-     */
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public Flight create(@PathVariable Integer id, @RequestBody Flight flight){
-        flightDbRepository.save(flight);
-        flight.setId(id);
-        return flight;
+    @RequestMapping(method = RequestMethod.POST)
+    public Flight create(@RequestBody Flight flight){
+        Flight flight1 = flightDbRepository.save(flight);
+        return flight1;
 
     }
 

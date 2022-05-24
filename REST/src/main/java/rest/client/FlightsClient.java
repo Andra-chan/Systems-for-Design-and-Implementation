@@ -9,7 +9,7 @@ import project.services.start.rest.ServiceException;
 import java.util.concurrent.Callable;
 
 public class FlightsClient {
-    public static final String URL = "http://localhost:8080/chat/users";
+    public static final String URL = "http://localhost:8080/flights";
 
     private RestTemplate restTemplate = new RestTemplate();
 
